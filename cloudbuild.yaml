@@ -35,7 +35,7 @@ steps:
     args:
       - "run"
       - "deploy"
-      - "boty-app"
+      - "com-landings"
       - "--image"
       - "gcr.io/boty-app/com-landings:$COMMIT_SHA"
       - "--region"
