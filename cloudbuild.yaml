@@ -1,0 +1,77 @@
+serviceAccount: projects/boty-app/serviceAccounts:boty-app@appspot.gserviceaccount.com
+logsBucket: "gs://boty-app"
+steps:
+  # Build the container image with Sentry configuration for production
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      - "build"
+      - "-t"
+      - "gcr.io/boty-app/com-landings:$COMMIT_SHA"
+      - "--build-arg"
+      - "NEXT_PUBLIC_PRODUCTION_VARIABLE=true"
+      - "--build-arg"
+      - "NEXT_PUBLIC_FIRESTORE_API_KEY=${_NEXT_PUBLIC_FIRESTORE_API_KEY}"
+      - "--build-arg"
+      - "NEXT_PUBLIC_FIRESTORE_AUTH_DOMAIN=${_NEXT_PUBLIC_FIRESTORE_AUTH_DOMAIN}"
+      - "--build-arg"
+      - "NEXT_PUBLIC_FIRESTORE_PROJECT_ID=${_NEXT_PUBLIC_FIRESTORE_PROJECT_ID}"
+      - "--build-arg"
+      - "NEXT_PUBLIC_FIRESTORE_STORAGE_BUCKET=${_NEXT_PUBLIC_FIRESTORE_STORAGE_BUCKET}"
+      - "--build-arg"
+      - "NEXT_PUBLIC_FIRESTORE_MESSAGING_SENDER_ID=${_NEXT_PUBLIC_FIRESTORE_MESSAGING_SENDER_ID}"
+      - "--build-arg"
+      - "NEXT_PUBLIC_FIRESTORE_MEASUREMENT_ID=${_NEXT_PUBLIC_FIRESTORE_MEASUREMENT_ID}"
+      - "--build-arg"
+      - "NEXT_PUBLIC_FIRESTORE_APP_ID=${_NEXT_PUBLIC_FIRESTORE_APP_ID}"
+      - "."
+
+  # Push the container image to Container Registry
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["push", "gcr.io/boty-app/com-landings:$COMMIT_SHA"]
+
+  # Deploy container image to Cloud Run
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: gcloud
+    args:
+      - "run"
+      - "deploy"
+      - "boty-app"
+      - "--image"
+      - "gcr.io/boty-app/com-landings:$COMMIT_SHA"
+      - "--region"
+      - "us-central1"
+      - "--timeout"
+      - "3600s"
+      - "--port"
+      - "3000"
+      - "--allow-unauthenticated"
+      - "--set-secrets"
+      - "NEXT_PUBLIC_FIRESTORE_API_KEY=firestore_api_key:latest,NEXT_PUBLIC_FIRESTORE_PROJECT_ID=firestore_project_id:latest,NEXT_PUBLIC_FIRESTORE_AUTH_DOMAIN=firestore_auth_domain:latest,NEXT_PUBLIC_FIRESTORE_MESSAGING_SENDER_ID=firestore_messaging_sender_id:latest,NEXT_PUBLIC_FIRESTORE_APP_ID=firestore_app_id:latest,NEXT_PUBLIC_FIRESTORE_STORAGE_BUCKET=firestore_storage_bucket:latest,NEXT_PUBLIC_FIRESTORE_MEASUREMENT_ID=firestore_measurement_id:latest"
+  # Invalidate Cloud CDN cache for Next.js static assets
+  # This step MUST run AFTER the Cloud Run deployment.
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: gcloud
+    args:
+      - "compute"
+      - "url-maps"
+      - "invalidate-cdn-cache"
+      - "boty-app-balancer"
+      - "--path"
+      - "/_next/static/*"
+      - "--host"
+      - "app.boty.cloud"
+
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: gcloud
+    args:
+      - "compute"
+      - "url-maps"
+      - "invalidate-cdn-cache"
+      - "boty-app-balancer"
+      - "--path"
+      - "/"
+      - "--host"
+      - "app.boty.cloud"
+
+images:
+  - "gcr.io/boty-app/com-landings:$COMMIT_SHA"
