@@ -59,6 +59,7 @@ const lidhermaProposal = {
           "Enriquecimiento autom\u00e1tico de datos",
           "Detecci\u00f3n de nuevos profesionales",
         ],
+        price: "USD 3.000",
       },
       {
         number: "02",
@@ -70,6 +71,7 @@ const lidhermaProposal = {
           "Validaci\u00f3n autom\u00e1tica de matr\u00edcula",
           "Historial completo por profesional",
         ],
+        price: "USD 5.000",
       },
       {
         number: "03",
@@ -80,6 +82,7 @@ const lidhermaProposal = {
           "Reglas de env\u00edo autom\u00e1ticas",
           "Templates personalizados",
         ],
+        price: "USD 2.500",
       },
       {
         number: "04",
@@ -91,6 +94,7 @@ const lidhermaProposal = {
           "SEO org\u00e1nico & posicionamiento AI",
           "Sincronizaci\u00f3n de inventario en tiempo real",
         ],
+        price: "USD 5.000",
       },
       {
         number: "05",
@@ -102,6 +106,7 @@ const lidhermaProposal = {
           "Generaci\u00f3n de links de pago",
           "Conciliaci\u00f3n bancaria autom\u00e1tica",
         ],
+        price: "USD 6.000",
         isHighlighted: true,
         badge: "M\u00f3dulo Opcional",
       },
@@ -140,28 +145,28 @@ const lidhermaProposal = {
     plans: [
       {
         name: "Pago \u00danico",
-        amount: "USD 15.000",
+        amount: "USD 15.500",
         description: "M\u00f3dulos 1 al 4 incluidos",
         details: [
-          "Web Scraping de Alta Precisi\u00f3n",
-          "CRM con Inteligencia Artificial",
-          "Campa\u00f1a de Mailing Masivo",
-          "E-commerce B2B Hipersegmentado",
+          "Web Scraping de Alta Precisi\u00f3n \u2014 USD 3.000",
+          "CRM con Inteligencia Artificial \u2014 USD 5.000",
+          "Campa\u00f1a de Mailing Masivo \u2014 USD 2.500",
+          "E-commerce B2B Hipersegmentado \u2014 USD 5.000",
         ],
         addon:
-          "<strong>+ M\u00f3dulo 5 (WhatsApp Bot):</strong> USD 4.500",
+          "<strong>+ M\u00f3dulo 5 (WhatsApp Bot):</strong> USD 6.000",
       },
       {
         name: "Plan Financiado",
-        amount: "USD 3.000",
+        amount: "USD 3.500",
         amountSuffix: "inicial",
         description: "+ 9 cuotas de USD 1.500",
         details: [
           "M\u00f3dulos 1 al 4 incluidos",
-          "Total financiado: USD 16.500",
+          "Total financiado: USD 17.000",
         ],
         addon:
-          "<strong>+ M\u00f3dulo 5:</strong> 3 cuotas adicionales de USD 1.500",
+          "<strong>+ M\u00f3dulo 5:</strong> 4 cuotas adicionales de USD 1.500",
         isFeatured: true,
         badge: "Recomendado",
       },

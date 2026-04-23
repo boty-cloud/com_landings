@@ -72,6 +72,7 @@ export interface ModuleItem {
   title: string;
   body: string;
   features: string[];
+  price?: string;
   isHighlighted?: boolean;
   badge?: string;
 }
