@@ -95,3 +95,4 @@ npm run seed:auren        # Seed Auren proposal to Firestore
 - **Lidherma:** `lidherma-belgrano-2026` — CRM+AI for cosmetics distributor (5 modules, 2 pricing tiers)
 - **OCA:** `oca-logistica-2026` — Enterprise AI for logistics (4 modules: client integration, smart remitos, 360° traceability, dynamic routing; 3-phase pricing)
 - **Auren:** `auren-latam-2026` — AI strategy for professional services firm (5 modules: Audit 2.0, predictive tax, legal velocity, new revenue verticals, ecosystem governance; 3-phase pricing)
+- **Auren+Boty Alliance:** `auren-boty-alliance-2026` — Strategic partnership: Auren consults & identifies AI opportunities across industries, Boty implements solutions (5 modules: discovery, implementation, industry verticals, revenue model, ongoing support; 3-tier pricing per project)

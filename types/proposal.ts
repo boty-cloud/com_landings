@@ -41,7 +41,7 @@ export interface Proposal {
   };
 
   // Pricing
-  pricing: {
+  pricing?: {
     sectionTitle: string;
     sectionSubtitle: string;
     plans: PricingPlan[];

@@ -43,7 +43,7 @@ export default async function ProposalPage({ params }: Props) {
       <Intro {...proposal.intro} />
       <ModuleCards {...proposal.modules} />
       {proposal.iaHighlight && <IAHighlight {...proposal.iaHighlight} />}
-      <Pricing {...proposal.pricing} />
+      {proposal.pricing && <Pricing {...proposal.pricing} />}
       <Implementation {...proposal.implementation} />
       <CTA {...proposal.cta} />
       <Footer

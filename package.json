@@ -8,7 +8,8 @@
     "start": "next start",
     "seed:lidherma": "npx tsx scripts/seed-lidherma.ts",
     "seed:oca": "npx tsx scripts/seed-oca.ts",
-    "seed:auren": "npx tsx scripts/seed-auren.ts"
+    "seed:auren": "npx tsx scripts/seed-auren.ts",
+    "seed:auren-boty": "npx tsx scripts/seed-auren-boty.ts"
   },
   "dependencies": {
     "firebase": "^12.12.0",
