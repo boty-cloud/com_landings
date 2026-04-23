@@ -121,53 +121,6 @@ const ocaProposal = {
     ],
   },
 
-  // Pricing
-  pricing: {
-    sectionTitle: "Inversión Estratégica",
-    sectionSubtitle:
-      "Un modelo de inversión por fases que permite validar resultados antes de escalar.",
-    plans: [
-      {
-        name: "Fase 1 — Diagnóstico",
-        amount: "USD 25.000",
-        description: "Auditoría tecnológica + diseño de arquitectura",
-        details: [
-          "Relevamiento de infraestructura actual",
-          "Mapeo de flujos operativos críticos",
-          "Diseño de arquitectura de IA",
-          "Informe ejecutivo con roadmap",
-        ],
-      },
-      {
-        name: "Fase 2 — Piloto en OCA RED",
-        amount: "USD 85.000",
-        description: "Implementación piloto en red seleccionada",
-        details: [
-          "Despliegue en sucursales piloto",
-          "Integración con sistemas existentes",
-          "Motor de rutas dinámicas (VRP)",
-          "Dashboard predictivo B2B",
-        ],
-        isFeatured: true,
-        badge: "Recomendado para iniciar",
-      },
-      {
-        name: "Fase 3 — Escalamiento Nacional",
-        amount: "A definir",
-        amountSuffix: "post-piloto",
-        description: "Despliegue en las 1.400+ sucursales",
-        details: [
-          "Rollout nacional por regiones",
-          "Trazabilidad 360° + IoT",
-          "Remitos digitales + NLP legal",
-          "Capacitación a escala",
-        ],
-        addon:
-          "<strong>Inversión de Fase 3 definida en base a métricas del piloto</strong>",
-      },
-    ],
-  },
-
   // Implementation
   implementation: {
     sectionTitle: "Hoja de Ruta de Implementación",

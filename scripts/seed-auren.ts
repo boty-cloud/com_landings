@@ -132,53 +132,6 @@ const aurenProposal = {
     ],
   },
 
-  // Pricing
-  pricing: {
-    sectionTitle: "Inversión — Fase 1",
-    sectionSubtitle:
-      "Fase 1 cubre diagnóstico, arquitectura y primer piloto. Las fases siguientes se definen con métricas validadas.",
-    plans: [
-      {
-        name: "Diagnóstico & Arquitectura",
-        amount: "USD 35.000",
-        description: "Assessment completo + diseño de roadmap",
-        details: [
-          "Auditoría de infraestructura tecnológica",
-          "Mapeo de flujos por línea de servicio",
-          "Análisis de data readiness por país",
-          "Arquitectura de IA + informe al Directorio",
-        ],
-      },
-      {
-        name: "Piloto Dual",
-        amount: "USD 120.000",
-        description: "Un piloto interno + un piloto comercial",
-        details: [
-          "Auditoría 2.0 en una línea de servicio",
-          "AI Readiness Assessment (framework piloto)",
-          "Integración Microsoft / OpenAI",
-          "Métricas de ROI para validar Fase 2",
-        ],
-        isFeatured: true,
-        badge: "Recomendado",
-      },
-      {
-        name: "Rollout Regional",
-        amount: "A definir",
-        amountSuffix: "post-piloto",
-        description: "Escalamiento a los 5 hubs de LatAm",
-        details: [
-          "Despliegue por país: AR, CO, MX, CL, UY",
-          "Knowledge Graph + RAG corporativo",
-          "Mirror AI fiscal multi-jurisdicción",
-          "Capacitación y change management",
-        ],
-        addon:
-          "<strong>Inversión de rollout basada en resultados del piloto dual</strong>",
-      },
-    ],
-  },
-
   // Implementation
   implementation: {
     sectionTitle: "Hoja de Ruta de Implementación",
