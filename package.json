@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "seed:lidherma": "npx tsx scripts/seed-lidherma.ts"
+    "seed:lidherma": "npx tsx scripts/seed-lidherma.ts",
+    "seed:oca": "npx tsx scripts/seed-oca.ts",
+    "seed:auren": "npx tsx scripts/seed-auren.ts"
   },
   "dependencies": {
     "firebase": "^12.12.0",

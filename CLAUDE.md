@@ -3,7 +3,7 @@
 # CLAUDE.md — Dynamic Proposals App (com_landings)
 
 ## Project Overview
-Dynamic proposal landing page factory. Each commercial proposal is a Firestore document rendered by a single Next.js template via unique URLs (`/proposals/[id]`). Built for Boty's sales team to send client-specific AI/CRM implementation proposals.
+Dynamic proposal landing page factory. Each commercial proposal is a Firestore document rendered by a single Next.js template via unique URLs (`/proposals/[id]`). Built for Boty's sales team to send client-specific AI implementation proposals.
 
 ## Tech Stack
 - **Framework:** Next.js 16 (App Router, TypeScript, Server Components)
@@ -37,10 +37,14 @@ types/
 
 scripts/
   seed-lidherma.ts        # Seeds Lidherma proposal to Firestore
+  seed-oca.ts             # Seeds OCA LOG S.A. proposal to Firestore
+  seed-auren.ts           # Seeds Auren Latin America proposal to Firestore
 
 public/logos/             # Client & Boty logo assets
   Boty/                   # Version negativo.png, Iso positivo.png, etc.
   Lidherma/               # Client logo image
+  OCA/                    # OCA_Boty.png
+  Auren/                  # Auren_Boty.webp
 ```
 
 ## Commands
@@ -49,6 +53,8 @@ npm run dev               # Start dev server (localhost:3000)
 npm run build             # Production build (Turbopack)
 npm run start             # Start production server
 npm run seed:lidherma     # Seed Lidherma proposal to Firestore
+npm run seed:oca          # Seed OCA proposal to Firestore
+npm run seed:auren        # Seed Auren proposal to Firestore
 ```
 
 ## How to Create a New Proposal
@@ -87,3 +93,5 @@ npm run seed:lidherma     # Seed Lidherma proposal to Firestore
 
 ## Existing Proposals
 - **Lidherma:** `lidherma-belgrano-2026` — CRM+AI for cosmetics distributor (5 modules, 2 pricing tiers)
+- **OCA:** `oca-logistica-2026` — Enterprise AI for logistics (4 modules: client integration, smart remitos, 360° traceability, dynamic routing; 3-phase pricing)
+- **Auren:** `auren-latam-2026` — AI strategy for professional services firm (5 modules: Audit 2.0, predictive tax, legal velocity, new revenue verticals, ecosystem governance; 3-phase pricing)
