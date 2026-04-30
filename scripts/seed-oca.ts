@@ -63,34 +63,35 @@ const ocaProposal = {
       {
         number: "02",
         title: "Integración Total con Clientes",
-        body: 'Ecosistema digital de <strong>integración con clientes en tiempo real</strong>, teniendo acceso a información relevante de pedidos y stock, junto con <strong>dashboards predictivos</strong> con inteligencia de negocios para la mejora del servicio.',
+        body: "",
         features: [
-          "Integración en tiempo real con clientes",
-          "Acceso a información de pedidos y stock",
-          "Dashboards predictivos con BI",
+          "Ecosistema digital de integración con clientes en tiempo real",
+          "Acceso a información relevante de pedidos y stock",
+          "Dashboards predictivos con inteligencia de negocios",
           "Mejora continua del servicio",
         ],
       },
       {
         number: "03",
         title: "Seguimiento Inteligente",
-        body: 'Sistema de gestión de <strong>trazabilidad de punta a punta</strong> en el proceso de entrega de mercadería, con sistemas de alertas inteligentes para clientes finales con tiempos de entrega, demoras e incidentes. Internamente, la consolidación del cumplimiento de las entregas, buscando <strong>mejorar la comunicación con el receptor</strong> y reduciendo los casos de falla en la entrega.',
+        body: "",
         features: [
-          "Trazabilidad de punta a punta",
+          "Trazabilidad de punta a punta en el proceso de entrega",
           "Alertas inteligentes para clientes finales",
-          "Notificaciones de tiempos, demoras e incidentes",
+          "Notificaciones de tiempos de entrega, demoras e incidentes",
+          "Mejora en la comunicación con el receptor de mercadería",
           "Reducción de fallas en la entrega",
         ],
       },
       {
         number: "04",
         title: "Trazabilidad Inteligente",
-        body: 'Visibilidad de <strong>extremo a extremo</strong> para toda la cadena logística. Incluye <strong>trazabilidad biológica para OCA Salud</strong>, garantizando el cumplimiento de los estándares de la cadena de frío y transporte especializado.',
+        body: "",
         features: [
-          "Visibilidad extremo a extremo",
+          "Visibilidad de extremo a extremo para toda la cadena logística",
           "Trazabilidad biológica para OCA Salud",
           "Cadena de frío monitoreada",
-          "Estándares de transporte especializado",
+          "Cumplimiento de estándares de transporte especializado",
         ],
       },
       {
@@ -123,26 +124,25 @@ const ocaProposal = {
   // IA Highlight
   iaHighlight: {
     title: "Plan de modernización tecnológica en etapas",
-    description:
-      "Un proceso estructurado para acompañar a OCA en su <strong>camino de tecnologización</strong>, con resultados concretos y medibles en cada fase:",
+    description: "",
     cards: [
       {
-        icon: "🔎",
+        icon: "",
         title: "1. Identificación de procesos",
         text: "Identificar los procesos internos claves, que requieren de la implementación tecnológica.",
       },
       {
-        icon: "✏️",
+        icon: "",
         title: "2. Diseño de soluciones",
         text: "Diseñar soluciones específicas de implementación tecnológica con el objetivo de mejora y generar impacto interno inmediato.",
       },
       {
-        icon: "🧪",
+        icon: "",
         title: "3. Implementación piloto",
         text: "Seleccionar un grupo piloto para desarrollar la implementación y realizar las primeras pruebas de la solución.",
       },
       {
-        icon: "🌐",
+        icon: "",
         title: "4. Incorporación global",
         text: "Extender el uso del nuevo proceso tecnológico a nivel general en la empresa, buscando generar el impacto global de la solución.",
       },

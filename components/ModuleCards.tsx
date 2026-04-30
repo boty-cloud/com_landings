@@ -22,7 +22,7 @@ export default function ModuleCards({ sectionTitle, sectionSubtitle, items }: Mo
               {mod.badge && <div className="card__badge">{mod.badge}</div>}
               <div className="card__number">{mod.number}</div>
               <h3 className="card__title">{mod.title}</h3>
-              <p className="card__body" dangerouslySetInnerHTML={{ __html: mod.body }} />
+              {mod.body && <p className="card__body" dangerouslySetInnerHTML={{ __html: mod.body }} />}
               {mod.price && <div className="card__price">{mod.price}</div>}
               <ul className="card__features">
                 {mod.features.map((f, i) => (

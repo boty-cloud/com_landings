@@ -9,11 +9,11 @@ export default function IAHighlight({ title, description, cards }: IAHighlightPr
     <section className="section section--dark" id="ia">
       <div className="container container--narrow">
         <h2 className="section__title">{title}</h2>
-        <p dangerouslySetInnerHTML={{ __html: description }} />
+        {description && <p dangerouslySetInnerHTML={{ __html: description }} />}
         <div className="ia-grid">
           {cards.map((card, i) => (
             <div key={i} className="ia-card">
-              <div className="ia-card__icon">{card.icon}</div>
+              {card.icon && <div className="ia-card__icon">{card.icon}</div>}
               <h4>{card.title}</h4>
               <p>{card.text}</p>
             </div>
