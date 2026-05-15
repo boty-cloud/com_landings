@@ -36,10 +36,8 @@ const ocaProposal = {
   intro: {
     title: "El contexto exige una respuesta tecnológica",
     paragraphs: [
-      "La siguiente propuesta tiene como principal objetivo presentar diversas soluciones de implementación de <strong>inteligencia artificial y automatización de procesos</strong>, de modo que la empresa pueda mejorar la eficiencia de sus tareas operativas.",
-      "Dentro de las soluciones que se plantean como potenciales implementaciones, encontraremos eficiencia en procesos ligados directamente a los <strong>servicios core de la empresa</strong>. Poniendo foco en generar mejores resultados desde lo económico y desde el valor percibido, tanto del cliente, como del equipo de OCA, en todas sus verticales de negocios.",
-      "Es importante destacar que aquellos procesos operativos ligados a la correcta administración del negocio, también son sujetos de modernización mediante la implementación de <strong>soluciones de gestión eficientes</strong>, buscando acompañar a un crecimiento tecnológico general de la compañía.",
-      "El proyecto busca acompañar a OCA en un <strong>proceso continuo de modernización</strong>, entendiendo las metodologías y procesos actuales, para luego establecer un plan de trabajo por etapas que permita transitar un camino de tecnologización, con resultados concretos y medibles, sobre los distintos proyectos en curso.",
+      "Esta propuesta presenta soluciones de <strong>inteligencia artificial y automatización</strong> orientadas a mejorar la eficiencia en los servicios core de OCA, sus procesos administrativos y todas sus verticales de negocios.",
+      "El proyecto busca acompañar a OCA en un <strong>proceso continuo de modernización por etapas</strong>, con resultados concretos y medibles en cada fase de implementación.",
     ],
   },
 
@@ -73,25 +71,24 @@ const ocaProposal = {
       },
       {
         number: "03",
-        title: "Seguimiento Inteligente",
-        body: "",
+        title: "Seguimiento Inteligente de Entregas",
+        body: 'Sistema de <strong>gestión de última milla</strong> con alertas en tiempo real para clientes finales, mejorando la comunicación con el receptor y <strong>reduciendo los casos de falla en la entrega</strong> de paquetería.',
         features: [
           "Trazabilidad de punta a punta en el proceso de entrega",
-          "Alertas inteligentes para clientes finales",
+          "Alertas inteligentes para clientes finales con ETA",
           "Notificaciones de tiempos de entrega, demoras e incidentes",
-          "Mejora en la comunicación con el receptor de mercadería",
           "Reducción de fallas en la entrega",
         ],
       },
       {
         number: "04",
-        title: "Trazabilidad Inteligente",
-        body: "",
+        title: "Trazabilidad Salud",
+        body: 'Solución especializada para <strong>OCA Salud</strong>: monitoreo continuo de la <strong>cadena de frío</strong> y transporte de productos biológicos, garantizando el cumplimiento de estándares sanitarios y regulatorios.',
         features: [
-          "Visibilidad de extremo a extremo para toda la cadena logística",
-          "Trazabilidad biológica para OCA Salud",
-          "Cadena de frío monitoreada",
-          "Cumplimiento de estándares de transporte especializado",
+          "Trazabilidad biológica para productos de salud",
+          "Monitoreo continuo de cadena de frío con sensores IoT",
+          "Alertas predictivas ante riesgo de quiebre térmico",
+          "Cumplimiento de estándares sanitarios y de transporte especializado",
         ],
       },
       {
@@ -166,7 +163,7 @@ const ocaProposal = {
       {
         icon: "🇦🇷",
         title: "Fase 3 · Escalamiento Nacional (24-36 semanas)",
-        text: "Despliegue progresivo por regiones de los cuatro pilares de IA. Digitalización completa de remitos con visión artificial. Activación de sensores IoT para OCA Salud. Capacitación masiva del personal operativo.",
+        text: "Despliegue progresivo por regiones de las soluciones de IA validadas en piloto: remitos digitales, integración con clientes, seguimiento de entregas, trazabilidad salud, hojas de ruta inteligentes y gestión documental. Capacitación masiva del personal operativo.",
       },
     ],
   },

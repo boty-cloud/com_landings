@@ -7,7 +7,6 @@ import ModuleCards from "@/components/ModuleCards";
 import IAHighlight from "@/components/IAHighlight";
 import Pricing from "@/components/Pricing";
 import Implementation from "@/components/Implementation";
-import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 
@@ -45,7 +44,6 @@ export default async function ProposalPage({ params }: Props) {
       {proposal.iaHighlight && <IAHighlight {...proposal.iaHighlight} />}
       {proposal.pricing && <Pricing {...proposal.pricing} />}
       <Implementation {...proposal.implementation} />
-      <CTA {...proposal.cta} />
       <Footer
         botyLogoFooter={proposal.botyLogoFooter}
         copyText={proposal.footer.copyText}
