@@ -9,7 +9,9 @@
     "seed:lidherma": "npx tsx scripts/seed-lidherma.ts",
     "seed:oca": "npx tsx scripts/seed-oca.ts",
     "seed:auren": "npx tsx scripts/seed-auren.ts",
-    "seed:auren-boty": "npx tsx scripts/seed-auren-boty.ts"
+    "seed:auren-boty": "npx tsx scripts/seed-auren-boty.ts",
+    "seed:generic-ia": "npx tsx scripts/seed-generic-ia.ts",
+    "seed:relevamiento": "npx tsx scripts/seed-relevamiento.ts"
   },
   "dependencies": {
     "firebase": "^12.12.0",
