@@ -6,8 +6,9 @@ export interface Proposal {
   // Branding
   clientName: string;
   clientLogo: string;
-  botyLogo: string;
-  botyLogoFooter: string;
+  clientLogoSecondary?: string;
+  botyLogo?: string;
+  botyLogoFooter?: string;
 
   // Hero
   hero: {

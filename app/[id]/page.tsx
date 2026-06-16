@@ -36,6 +36,7 @@ export default async function ProposalPage({ params }: Props) {
       <Header
         botyLogo={proposal.botyLogo}
         clientLogo={proposal.clientLogo}
+        clientLogoSecondary={proposal.clientLogoSecondary}
         clientName={proposal.clientName}
       />
       <Hero {...proposal.hero} />

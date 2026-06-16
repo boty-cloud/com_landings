@@ -39,12 +39,14 @@ scripts/
   seed-lidherma.ts        # Seeds Lidherma proposal to Firestore
   seed-oca.ts             # Seeds OCA LOG S.A. proposal to Firestore
   seed-auren.ts           # Seeds Auren Latin America proposal to Firestore
+  seed-guayal.ts          # Seeds Guayal IA Assessment proposal to Firestore
 
 public/logos/             # Client & Boty logo assets
   Boty/                   # Version negativo.png, Iso positivo.png, etc.
   Lidherma/               # Client logo image
   OCA/                    # OCA_Boty.png
-  Auren/                  # Auren_Boty.webp
+  Auren/                  # Auren.jpeg
+  Guayal/                 # Guayal.jpeg
 ```
 
 ## Commands
@@ -55,6 +57,7 @@ npm run start             # Start production server
 npm run seed:lidherma     # Seed Lidherma proposal to Firestore
 npm run seed:oca          # Seed OCA proposal to Firestore
 npm run seed:auren        # Seed Auren proposal to Firestore
+npm run seed:guayal       # Seed Guayal IA Assessment proposal to Firestore
 ```
 
 ## How to Create a New Proposal
@@ -96,3 +99,4 @@ npm run seed:auren        # Seed Auren proposal to Firestore
 - **OCA:** `oca-logistica-2026` — Enterprise AI for logistics (4 modules: client integration, smart remitos, 360° traceability, dynamic routing; 3-phase pricing)
 - **Auren:** `auren-latam-2026` — AI strategy for professional services firm (5 modules: Audit 2.0, predictive tax, legal velocity, new revenue verticals, ecosystem governance; 3-phase pricing)
 - **Auren+Boty Alliance:** `auren-boty-alliance-2026` — Strategic partnership: Auren consults & identifies AI opportunities across industries, Boty implements solutions (5 modules: discovery, implementation, industry verticals, revenue model, ongoing support; 3-tier pricing per project)
+- **Guayal IA Assessment:** `guayal-ia-assessment-2026` — 4-week AI readiness assessment for companies (co-branded with Auren & Guayal): discovery workshops, data/systems audit, impact matrix, roadmap deliverables; no pricing (handled separately by Auren)
