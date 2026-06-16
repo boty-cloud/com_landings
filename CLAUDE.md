@@ -40,6 +40,7 @@ scripts/
   seed-oca.ts             # Seeds OCA LOG S.A. proposal to Firestore
   seed-auren.ts           # Seeds Auren Latin America proposal to Firestore
   seed-guayal.ts          # Seeds Guayal IA Assessment proposal to Firestore
+  seed-guayal-implementation.ts  # Seeds Guayal Implementation (End-to-End Framework) to Firestore
 
 public/logos/             # Client & Boty logo assets
   Boty/                   # Version negativo.png, Iso positivo.png, etc.
@@ -58,6 +59,7 @@ npm run seed:lidherma     # Seed Lidherma proposal to Firestore
 npm run seed:oca          # Seed OCA proposal to Firestore
 npm run seed:auren        # Seed Auren proposal to Firestore
 npm run seed:guayal       # Seed Guayal IA Assessment proposal to Firestore
+npm run seed:guayal-implementation  # Seed Guayal Implementation proposal to Firestore
 ```
 
 ## How to Create a New Proposal
@@ -100,3 +102,4 @@ npm run seed:guayal       # Seed Guayal IA Assessment proposal to Firestore
 - **Auren:** `auren-latam-2026` — AI strategy for professional services firm (5 modules: Audit 2.0, predictive tax, legal velocity, new revenue verticals, ecosystem governance; 3-phase pricing)
 - **Auren+Boty Alliance:** `auren-boty-alliance-2026` — Strategic partnership: Auren consults & identifies AI opportunities across industries, Boty implements solutions (5 modules: discovery, implementation, industry verticals, revenue model, ongoing support; 3-tier pricing per project)
 - **Guayal IA Assessment:** `guayal-ia-assessment-2026` — 4-week AI readiness assessment for companies (co-branded with Auren & Guayal): discovery workshops, data/systems audit, impact matrix, roadmap deliverables; no pricing (handled separately by Auren)
+- **Guayal Implementation:** `guayal-implementation-2026` — End-to-End implementation framework (co-branded with Auren & Guayal): 5 phases from discovery to continuous optimization, based on proyectos_ia.md methodology (Discovery & Viability, Solution Architecture, MVP Development, Deployment & Change Management, Continuous Optimization); no pricing (handled separately by Auren)
