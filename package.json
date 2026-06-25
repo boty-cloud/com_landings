@@ -14,7 +14,8 @@
     "seed:relevamiento": "npx tsx scripts/seed-relevamiento.ts",
     "seed:guayal": "npx tsx scripts/seed-guayal.ts",
     "seed:guayal-implementation": "npx tsx scripts/seed-guayal-implementation.ts",
-    "seed:auren-template": "npx tsx scripts/seed-auren-template.ts"
+    "seed:auren-template": "npx tsx scripts/seed-auren-template.ts",
+    "seed:auren-guayal": "npx tsx scripts/seed-auren-guayal-assessment.ts"
   },
   "dependencies": {
     "firebase": "^12.12.0",

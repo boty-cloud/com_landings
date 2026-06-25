@@ -566,15 +566,28 @@ body {
 /* ─── AUREN SPECIFIC OVERRIDES ─── */
 [data-brand="auren"] .hero {
   background:
-    linear-gradient(rgba(226, 35, 26, 0.08), rgba(226, 35, 26, 0.02)),
+    linear-gradient(180deg, rgba(226, 35, 26, 0.06) 0%, rgba(226, 35, 26, 0.02) 50%, rgba(38, 39, 41, 0.04) 100%),
     var(--color-bg);
 }
 
+[data-brand="auren"] .hero__tag {
+  color: var(--color-accent);
+}
+
+[data-brand="auren"] .hero__title {
+  color: var(--color-text);
+}
+
+[data-brand="auren"] .hero__sub {
+  color: var(--color-text-muted);
+}
+
 [data-brand="auren"] .gradient-text {
-  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-3));
+  background: linear-gradient(135deg, #e2231a, #b81d15);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-weight: 700;
 }
 
 [data-brand="auren"] .btn {
