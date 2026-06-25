@@ -10,6 +10,13 @@ import Implementation from "@/components/Implementation";
 import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 
+// Auren-specific components
+import CompanyUnderstanding from "@/components/auren/CompanyUnderstanding";
+import NeedUnderstanding from "@/components/auren/NeedUnderstanding";
+import Solution from "@/components/auren/Solution";
+import AboutUs from "@/components/auren/AboutUs";
+import Team from "@/components/auren/Team";
+
 interface Props {
   params: Promise<{ id: string }>;
 }
@@ -31,6 +38,35 @@ export default async function ProposalPage({ params }: Props) {
   const proposal = await getProposal(id);
   if (!proposal) notFound();
 
+  const brand = proposal.brand || "boty";
+
+  // Auren proposal structure
+  if (brand === "auren") {
+    return (
+      <div data-brand="auren">
+        <Header
+          botyLogo={proposal.aurenLogo || proposal.botyLogo}
+          clientLogo={proposal.clientLogo}
+          clientLogoSecondary={proposal.clientLogoSecondary}
+          clientName={proposal.clientName}
+        />
+        <Hero {...proposal.hero} />
+        {proposal.companyUnderstanding && <CompanyUnderstanding {...proposal.companyUnderstanding} />}
+        {proposal.needUnderstanding && <NeedUnderstanding {...proposal.needUnderstanding} />}
+        {proposal.solution && <Solution {...proposal.solution} />}
+        {proposal.aboutUs && <AboutUs {...proposal.aboutUs} />}
+        {proposal.pricing && <Pricing {...proposal.pricing} />}
+        {proposal.team && <Team {...proposal.team} />}
+        <Implementation {...proposal.implementation} />
+        <Footer
+          botyLogoFooter={proposal.aurenLogo || proposal.botyLogoFooter}
+          copyText={proposal.footer.copyText}
+        />
+      </div>
+    );
+  }
+
+  // Boty proposal structure (default)
   return (
     <>
       <Header

@@ -18,6 +18,35 @@
   --radius-sm: 10px;
 }
 
+/* ═══════════════════════════════════════════════
+   Auren Brand Theme
+   Pantone 485 C (Red): C:1, M:94, Y:98, K:0 | R:226, G:35, B:26
+   Pantone 426 C (Gray): C:76, M:67, Y:61, K:68 | R:38, G:39, B:41
+   Claim gray: Pantone 426 C @ 80%
+   ═══════════════════════════════════════════════ */
+[data-brand="auren"] {
+  --color-bg: #ffffff;
+  --color-surface: #f8f8f8;
+  --color-surface-light: #ffffff;
+  --color-text: #262729; /* Pantone 426 C */
+  --color-text-muted: #5a5a5d; /* Pantone 426 C @ 80% */
+  --color-text-dark: #262729;
+  --color-accent: #e2231a; /* Pantone 485 C */
+  --color-accent-2: #e2231a;
+  --color-accent-3: #262729;
+  --color-border: rgba(38, 39, 41, 0.12);
+  --color-card: rgba(38, 39, 41, 0.02);
+  --radius: 0px; /* Auren uses sharp corners */
+  --radius-sm: 0px;
+}
+
+/* Auren typography - fallback to Verdana (Avant Garde Pro requires font file) */
+[data-brand="auren"] body {
+  font-family: Verdana, Geneva, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -532,6 +561,62 @@ body {
 .root-index p {
   color: var(--color-text-muted);
   margin-top: 8px;
+}
+
+/* ─── AUREN SPECIFIC OVERRIDES ─── */
+[data-brand="auren"] .hero {
+  background:
+    linear-gradient(rgba(226, 35, 26, 0.08), rgba(226, 35, 26, 0.02)),
+    var(--color-bg);
+}
+
+[data-brand="auren"] .gradient-text {
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-3));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+[data-brand="auren"] .btn {
+  background: var(--color-accent);
+  border-radius: 0;
+}
+
+[data-brand="auren"] .btn:hover {
+  box-shadow: 0 4px 16px rgba(226, 35, 26, 0.3);
+}
+
+[data-brand="auren"] .card,
+[data-brand="auren"] .pricing__card,
+[data-brand="auren"] .ia-card,
+[data-brand="auren"] .impl-card {
+  border-radius: 0;
+  border-color: var(--color-border);
+}
+
+[data-brand="auren"] .section--dark {
+  background: #262729;
+  color: #ffffff;
+}
+
+[data-brand="auren"] .section--dark .section__subtitle,
+[data-brand="auren"] .section--dark p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+[data-brand="auren"] .section--cta {
+  background: var(--color-accent);
+}
+
+[data-brand="auren"] .header {
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid var(--color-border);
+}
+
+[data-brand="auren"] .footer {
+  background: #262729;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* ─── RESPONSIVE ─── */

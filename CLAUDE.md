@@ -3,7 +3,9 @@
 # CLAUDE.md — Dynamic Proposals App (com_landings)
 
 ## Project Overview
-Dynamic proposal landing page factory. Each commercial proposal is a Firestore document rendered by a single Next.js template via unique URLs (`/proposals/[id]`). Built for Boty's sales team to send client-specific AI implementation proposals.
+Dynamic proposal landing page factory. Each commercial proposal is a Firestore document rendered by a single Next.js template via unique URLs (`/[id]`). Supports two brands:
+- **Boty proposals:** AI implementation proposals (original purple/dark theme)
+- **Auren proposals:** Professional services consulting proposals (Auren red/gray brand colors, following Auren corporate identity guidelines)
 
 ## Tech Stack
 - **Framework:** Next.js 16 (App Router, TypeScript, Server Components)
@@ -18,14 +20,20 @@ Dynamic proposal landing page factory. Each commercial proposal is a Firestore d
 app/
   layout.tsx              # Root layout (Inter font, noindex for all pages)
   page.tsx                # Root "/" — minimal landing, proposals need direct links
-  globals.css             # All styles (dark theme, gradient accents, responsive)
-  proposals/[id]/
-    page.tsx              # SSR — fetches Firestore doc by ID, renders all sections
+  globals.css             # All styles (Boty dark theme + Auren light theme)
+  [id]/
+    page.tsx              # SSR — fetches Firestore doc by ID, renders brand-specific sections
     not-found.tsx         # 404 for invalid proposal IDs
 
 components/               # Reusable presentational Server Components
   Header.tsx, Hero.tsx, Intro.tsx, ModuleCards.tsx,
   IAHighlight.tsx, Pricing.tsx, Implementation.tsx, CTA.tsx, Footer.tsx
+  auren/                  # Auren-specific components (for brand === "auren")
+    CompanyUnderstanding.tsx  # 1. Entendimiento de la empresa
+    NeedUnderstanding.tsx     # 2. Entendimiento de la necesidad
+    Solution.tsx              # 3. Solución (fases de implementación)
+    AboutUs.tsx               # 4. Quiénes somos
+    Team.tsx                  # 6. Equipo de trabajo
 
 lib/
   firebase.ts             # Client-side Firebase init (for future use)
@@ -36,11 +44,12 @@ types/
   proposal.ts             # Proposal, ModuleItem, PricingPlan interfaces
 
 scripts/
-  seed-lidherma.ts        # Seeds Lidherma proposal to Firestore
-  seed-oca.ts             # Seeds OCA LOG S.A. proposal to Firestore
-  seed-auren.ts           # Seeds Auren Latin America proposal to Firestore
-  seed-guayal.ts          # Seeds Guayal IA Assessment proposal to Firestore
-  seed-guayal-implementation.ts  # Seeds Guayal Implementation (End-to-End Framework) to Firestore
+  seed-lidherma.ts        # Seeds Lidherma proposal to Firestore (Boty brand)
+  seed-oca.ts             # Seeds OCA LOG S.A. proposal to Firestore (Boty brand)
+  seed-auren.ts           # Seeds Auren Latin America proposal to Firestore (Boty brand)
+  seed-guayal.ts          # Seeds Guayal IA Assessment proposal to Firestore (Boty brand)
+  seed-guayal-implementation.ts  # Seeds Guayal Implementation (End-to-End Framework) to Firestore (Boty brand)
+  seed-auren-template.ts  # 🆕 Template for Auren-branded proposals (Auren brand)
 
 public/logos/             # Client & Boty logo assets
   Boty/                   # Version negativo.png, Iso positivo.png, etc.
@@ -63,17 +72,40 @@ npm run seed:guayal-implementation  # Seed Guayal Implementation proposal to Fir
 ```
 
 ## How to Create a New Proposal
+
+### Boty-Branded Proposal (Default)
 1. Create a new seed script in `scripts/` (or duplicate `seed-lidherma.ts`)
 2. Fill in the `Proposal` typed object with client-specific data (see `types/proposal.ts`)
-3. Add client logos to `public/logos/<ClientName>/`
-4. Run `npx tsx scripts/seed-<client>.ts` to push to Firestore
-5. Share the link: `https://<domain>/proposals/<proposal-id>`
-6. Add a `"seed:<client>"` script to `package.json`
+3. Leave `brand` undefined or set to `"boty"`
+4. Add client logos to `public/logos/<ClientName>/`
+5. Run `npx tsx scripts/seed-<client>.ts` to push to Firestore
+6. Share the link: `https://<domain>/<proposal-id>`
+7. Add a `"seed:<client>"` script to `package.json`
+
+### Auren-Branded Proposal
+1. Duplicate `scripts/seed-auren-template.ts`
+2. Set `brand: "auren"` in the Proposal object
+3. Fill in Auren-specific sections:
+   - `companyUnderstanding`: Descripción detallada del negocio del cliente
+   - `needUnderstanding`: Problemática que necesita resolver
+   - `solution`: Fases de implementación con entregables y tiempos
+   - `aboutUs`: ¿Por qué elegir Auren? (fixed content, pre-filled)
+   - `pricing`: Propuesta económica (modalidad, inversión)
+   - `team`: Equipo de trabajo con fotos (Auren + Cliente)
+4. Add client logos to `public/logos/<ClientName>/`
+5. Add team photos to `public/logos/Auren/team/` and `public/logos/<ClientName>/team/`
+6. Run `npx tsx scripts/seed-<client>.ts` to push to Firestore
+7. Share the link: `https://<domain>/<proposal-id>`
+
+**Important:** Auren proposals follow `.claude/rules/Propuestas_Auren.md` structure and use Auren brand colors (Pantone 485 C red, Pantone 426 C gray) per `.claude/rules/manual_marca_auren.md`
 
 ## Data Model (Firestore)
 - **Collection:** `proposals`
-- **Document ID:** Slug like `lidherma-belgrano-2026` (or UUID for extra security)
-- **Shape:** See `types/proposal.ts` — sections are typed fields (hero, intro, modules, iaHighlight?, pricing, implementation, cta, footer)
+- **Document ID:** Slug like `lidherma-belgrano-2026` or `auren-clientname-2026` (or UUID for extra security)
+- **Shape:** See `types/proposal.ts` — sections are typed fields
+- **Brand field:** `brand?: "boty" | "auren"` (defaults to "boty" if undefined)
+  - **Boty proposals:** Use `intro`, `modules`, `iaHighlight?`, `pricing?`, `implementation`, `cta`, `footer`
+  - **Auren proposals:** Use `companyUnderstanding`, `needUnderstanding`, `solution`, `aboutUs`, `pricing?`, `team?`, `implementation`, `cta`, `footer`
 - All sections are optional via `?` — components conditionally render
 - HTML is allowed in string fields (rendered via `dangerouslySetInnerHTML`) — safe because data is internal, not user-submitted
 
@@ -81,6 +113,9 @@ npm run seed:guayal-implementation  # Seed Guayal Implementation proposal to Fir
 - **Language:** All proposals in Argentine Spanish (voseo: "tenés", "podés", "conocé")
 - **SEO:** All proposal pages have `robots: { index: false, follow: false }` — private links only
 - **Logos:** Always stored in `public/logos/<ClientName>/`, referenced in Firestore as `/logos/<ClientName>/filename`
+- **Brand Detection:** The page wrapper uses `data-brand="auren"` attribute to apply Auren CSS theme via attribute selectors
+- **Boty Theme:** Dark background (#0a0a0f), purple gradients (#6c5ce7, #a855f7), rounded corners (16px)
+- **Auren Theme:** Light background (#ffffff), Pantone 485 C red (#e2231a), Pantone 426 C gray (#262729), sharp corners (0px), Verdana font
 - **Components:** All are React Server Components (no `"use client"`) — purely presentational, receive props from page
 - **Image paths:** In Firestore data use `/logos/...` (no `public/` prefix — Next.js serves `public/` at root)
 - **Firebase Admin:** Only used server-side in `lib/firebase-admin.ts`. Never import in client components
