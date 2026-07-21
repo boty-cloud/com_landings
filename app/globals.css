@@ -337,11 +337,11 @@ body {
 
 /* ─── IA SECTION ─── */
 .ia-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 28px;
   margin-top: 40px;
-  justify-items: center;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
@@ -353,7 +353,7 @@ body {
   border-radius: var(--radius-sm);
   padding: 28px 24px;
   text-align: center;
-  width: 100%;
+  flex: 0 1 240px;
   max-width: 240px;
 }
 
@@ -633,12 +633,6 @@ body {
 }
 
 /* ─── RESPONSIVE ─── */
-@media (max-width: 1024px) {
-  .ia-grid {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  }
-}
-
 @media (max-width: 768px) {
   .modules {
     grid-template-columns: 1fr;
@@ -648,8 +642,8 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .ia-grid {
-    grid-template-columns: 1fr;
+  .ia-card {
+    flex-basis: 100%;
   }
 
   .hero {

@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --app --no-tailwind --no-eslint --no-src-dir --import-alias \"@/*\" --use-npm)",
+      "Bash(mkdir -p _backup)",
+      "Bash(mv index.html styles.css Dockerfile cloudbuild.yaml .env.local _backup/)",
+      "Bash(mv public:*)",
+      "Bash(mv _backup /tmp/_backup_landings)",
+      "Bash(mv _backup_public /tmp/_backup_public_landings)",
+      "Bash(mv .claude /tmp/_backup_claude_landings)",
+      "Bash(mv /tmp/_backup_landings/.env.local .)",
+      "Bash(mv /tmp/_backup_landings/Dockerfile .)",
+      "Bash(mv /tmp/_backup_landings/cloudbuild.yaml .)",
+      "Bash(mv /tmp/_backup_claude_landings .claude)",
+      "Bash(cp -r /tmp/_backup_public_landings/logos public/logos)",
+      "Bash(mkdir:*)",
+      "Bash(npm run:*)",
+      "Bash(docker build:*)",
+      "Bash(rtk git *)",
+      "Bash(rtk npx *)",
+      "Bash(npx tsx *)",
+      "Bash(curl *)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(rtk npm *)"
+    ]
+  }
+}

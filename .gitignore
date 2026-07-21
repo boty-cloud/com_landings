@@ -45,10 +45,6 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-.claude/
-CLAUDE.md
-*.claude 
-AGENTS.md
 CLAUDE.local.md
 .claude/settings.local.jsoncredentials.json
 credentials.json
