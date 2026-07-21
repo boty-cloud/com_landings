@@ -241,10 +241,16 @@ body {
 
 /* ─── MODULE CARDS ─── */
 .modules {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 28px;
   margin-top: 48px;
+}
+
+.modules > .card {
+  flex: 1 1 340px;
+  max-width: 400px;
 }
 
 .card {
@@ -652,8 +658,9 @@ body {
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 768px) {
-  .modules {
-    grid-template-columns: 1fr;
+  .modules > .card {
+    flex: 1 1 100%;
+    max-width: 100%;
   }
 
   .pricing {
