@@ -21,13 +21,13 @@ export default function Solution({ title, subtitle, description, phases, methodo
         <h2 className="section__title">{title}</h2>
         {subtitle && <p className="section__subtitle">{subtitle}</p>}
         {description && (
-          <div className="container--narrow" style={{ marginBottom: "3rem" }}>
+          <div className="container container--narrow" style={{ marginBottom: "3rem" }}>
             <p dangerouslySetInnerHTML={{ __html: description }} style={{ fontSize: "1.05rem", lineHeight: "1.8" }} />
           </div>
         )}
 
         {methodology && (
-          <div className="container--narrow" style={{ marginBottom: "3rem", padding: "2rem", background: "var(--color-card)", border: "1px solid var(--color-border)" }}>
+          <div className="container container--narrow" style={{ marginBottom: "3rem", padding: "2rem", background: "var(--color-card)", border: "1px solid var(--color-border)" }}>
             <h3 style={{ fontSize: "1.4rem", marginBottom: "1rem", color: "var(--color-accent)" }}>{methodology.title}</h3>
             <p dangerouslySetInnerHTML={{ __html: methodology.description }} style={{ fontSize: "1rem", lineHeight: "1.7" }} />
           </div>

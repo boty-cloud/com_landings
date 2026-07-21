@@ -607,6 +607,12 @@ body {
   border-color: var(--color-border);
 }
 
+[data-brand="auren"] .pricing__card--featured {
+  background: #ffffff;
+  border-color: var(--color-accent);
+  box-shadow: 0 2px 24px rgba(38, 39, 41, 0.08);
+}
+
 [data-brand="auren"] .section--dark {
   background: #262729;
   color: #ffffff;
