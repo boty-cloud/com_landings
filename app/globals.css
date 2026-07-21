@@ -613,6 +613,18 @@ body {
   box-shadow: 0 2px 24px rgba(38, 39, 41, 0.08);
 }
 
+/* Flex grid so trailing card(s) on the last row stay centered */
+[data-brand="auren"] .modules {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+[data-brand="auren"] .modules > .card {
+  flex: 1 1 340px;
+  max-width: 400px;
+}
+
 [data-brand="auren"] .section--dark {
   background: #262729;
   color: #ffffff;
