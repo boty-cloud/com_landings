@@ -14,6 +14,7 @@
 
 import admin from "firebase-admin";
 import { Proposal } from "../types/proposal";
+import { AUREN_ABOUT_US, AUREN_TEAM } from "./auren-shared";
 
 // Initialize Firebase Admin
 if (!admin.apps.length) {
@@ -48,8 +49,8 @@ const proposal: Proposal = {
     titleHighlight: "Nombre del Cliente", // CHANGE THIS
     titlePost: "",
     subtitle: "Solución integral de implementación de IA y automatización de procesos",
-    ctaText: "Conocé la propuesta",
-    ctaHref: "#intro",
+    ctaText: "Descargá la propuesta en PDF", // "#print" abre el diálogo de impresión → Guardar como PDF
+    ctaHref: "#print",
   },
 
   // ═══════════════════════════════════════════════
@@ -151,70 +152,41 @@ const proposal: Proposal = {
 
   // ═══════════════════════════════════════════════
   // 4. QUIÉNES SOMOS
-  // Componente fijo de Auren (no cambia por propuesta)
+  // Bloque fijo de Auren (¿Por qué Auren? + Consultoría 360° + Propuesta de valor).
+  // No modificar por propuesta — se mantiene igual en todas. Editar en scripts/auren-shared.ts.
   // ═══════════════════════════════════════════════
-  aboutUs: {
-    title: "¿Por qué elegir Auren?",
-    logo: "/logos/Auren/Auren.jpeg",
-    paragraphs: [
-      "Auren es una firma internacional de consultoría con presencia en más de 90 países y más de 30.000 profesionales especializados.",
-      "<strong>Enfoque boutique y cercano</strong>, con respaldo metodológico de estándares internacionales.",
-      "<strong>Visión integrada</strong> entre consultoría estratégica, BPO, tecnología y recursos humanos.",
-      "<strong>Compromiso con la Responsabilidad Social Corporativa</strong> alineado con los Objetivos de Desarrollo Sostenible (ODS) de la ONU.",
-      "Auren Latin America combina la excelencia global con el conocimiento profundo del mercado local, ofreciendo soluciones adaptadas a las necesidades específicas de cada cliente.",
-    ],
-  },
+  aboutUs: AUREN_ABOUT_US,
 
   // ═══════════════════════════════════════════════
   // 5. PROPUESTA ECONÓMICA
+  // No mostrar monto total: presentar la estructura de pago + plazo del proyecto.
+  // Dejar `amount` sin definir. Usar `details` para el esquema de pago y `duration` para el plazo.
   // ═══════════════════════════════════════════════
   pricing: {
     sectionTitle: "Propuesta Económica",
-    sectionSubtitle: "Inversión ajustada al alcance y valor generado",
+    sectionSubtitle: "Esquema de pago y plazo del proyecto",
     plans: [
       {
-        name: "Implementación Completa",
-        amount: "ARS [MONTO]",
-        amountSuffix: "+ IVA",
-        description: "Paquete de [X] horas mensuales por [Y] meses",
+        name: "Fase 1 · Implementación",
+        description: "Desarrollo e implementación completa del alcance definido para la Fase 1.",
         details: [
-          "[X] horas mensuales de consultoría",
-          "Acompañamiento durante [Y] meses",
-          "Soporte técnico incluido",
-          "Reportes de gestión personalizados",
-          "Capacitación del equipo",
+          "U$D [MONTO] al inicio del proyecto",
+          "[N] cuotas mensuales de U$D [MONTO]",
+          "Incluye desarrollo, implementación y puesta en marcha",
         ],
-        addon: "Ajustable por IPC. Excluye: viáticos y horas de consultoría del proveedor externo (si aplica).",
+        duration: "[N] meses de trabajo",
         isFeatured: true,
-        badge: "Recomendado",
+        badge: "Propuesta Fase 1",
       },
     ],
   },
 
   // ═══════════════════════════════════════════════
   // 6. EQUIPO DE TRABAJO
-  // Incluir fotos del equipo involucrado
+  // Bloque compartido: perfiles de implementación (solo roles, sin nombres).
+  // Editar en scripts/auren-shared.ts.
   // ═══════════════════════════════════════════════
-  team: {
-    title: "Equipo de Trabajo",
-    members: [
-      {
-        name: "Micaela Puebla",
-        role: "Líder de Consultoría Auren",
-        photo: "/logos/Auren/team/micaela.jpg", // CHANGE THIS: Add team photos
-      },
-      {
-        name: "Ayelén Capalbo",
-        role: "Consultora Senior Auren",
-        photo: "/logos/Auren/team/ayelen.jpg",
-      },
-      {
-        name: "[Nombre]",
-        role: "[Rol del Cliente]",
-        photo: "/logos/ClientName/team/person.jpg",
-      },
-    ],
-  },
+  team: AUREN_TEAM,
 
   // ═══════════════════════════════════════════════
   // IMPLEMENTACIÓN (Pasos generales)

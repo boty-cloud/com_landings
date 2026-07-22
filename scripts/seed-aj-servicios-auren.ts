@@ -6,6 +6,7 @@
 
 import admin from "firebase-admin";
 import { Proposal } from "../types/proposal";
+import { AUREN_ABOUT_US, AUREN_TEAM } from "./auren-shared";
 
 // Initialize Firebase Admin
 if (!admin.apps.length) {
@@ -36,13 +37,13 @@ const proposal: Proposal = {
   // ═══════════════════════════════════════════════
   hero: {
     tag: "Propuesta de Servicios · 2026",
-    titlePre: "Automatización inteligente de la prospección para",
+    titlePre: "Automatización inteligente de la prospección para ",
     titleHighlight: "AJ Servicios",
     titlePost: "",
     subtitle:
       "Solución de automatización con inteligencia artificial para el proceso de prospección y gestión de leads, integrando LinkedIn, mail y WhatsApp en un flujo continuo hasta el cierre del negocio.",
-    ctaText: "Conocé la propuesta",
-    ctaHref: "#intro",
+    ctaText: "Descargá la propuesta en PDF",
+    ctaHref: "#print",
   },
 
   // ═══════════════════════════════════════════════
@@ -133,39 +134,28 @@ const proposal: Proposal = {
   },
 
   // ═══════════════════════════════════════════════
-  // 4. QUIÉNES SOMOS (fijo Auren)
+  // 4. QUIÉNES SOMOS (fijo Auren — bloque compartido)
   // ═══════════════════════════════════════════════
-  aboutUs: {
-    title: "¿Por qué elegir Auren?",
-    logo: "/logos/Auren/Auren.jpeg",
-    paragraphs: [
-      "Auren es una firma internacional de consultoría con presencia en más de 90 países y más de 30.000 profesionales especializados.",
-      "<strong>Enfoque boutique y cercano</strong>, con respaldo metodológico de estándares internacionales.",
-      "<strong>Visión integrada</strong> entre consultoría estratégica, BPO, tecnología y recursos humanos.",
-      "<strong>Compromiso con la Responsabilidad Social Corporativa</strong> alineado con los Objetivos de Desarrollo Sostenible (ODS) de la ONU.",
-      "Auren Latin America combina la excelencia global con el conocimiento profundo del mercado local, ofreciendo soluciones adaptadas a las necesidades específicas de cada cliente.",
-    ],
-  },
+  aboutUs: AUREN_ABOUT_US,
 
   // ═══════════════════════════════════════════════
   // 5. PROPUESTA ECONÓMICA
+  // Sin monto total: solo estructura de pago y plazo del proyecto.
   // ═══════════════════════════════════════════════
   pricing: {
     sectionTitle: "Propuesta Económica",
-    sectionSubtitle: "Inversión para el desarrollo e implementación de la Fase 1.",
+    sectionSubtitle: "Esquema de pago y plazo para el desarrollo e implementación de la Fase 1.",
     plans: [
       {
         name: "Fase 1 · Automatización LinkedIn",
-        amount: "USD 25.000",
-        amountSuffix: "+ IVA",
         description:
           "Desarrollo e implementación completa del flujo automatizado de conversación y calificación de leads en LinkedIn.",
         details: [
-          "30% contra aceptación de la propuesta",
-          "2 cuotas mensuales de USD 5.500 (meses 1 y 2)",
-          "1 cuota de USD 6.500 (mes 3)",
+          "U$D 11.600 al inicio del proyecto",
+          "3 cuotas mensuales de U$D 8.800",
           "Incluye desarrollo, implementación y puesta en marcha",
         ],
+        duration: "4 meses de trabajo",
         isFeatured: true,
         badge: "Propuesta Fase 1",
       },
@@ -173,23 +163,9 @@ const proposal: Proposal = {
   },
 
   // ═══════════════════════════════════════════════
-  // 6. EQUIPO DE TRABAJO
+  // 6. EQUIPO DE TRABAJO (bloque compartido)
   // ═══════════════════════════════════════════════
-  team: {
-    title: "Equipo de Trabajo",
-    members: [
-      {
-        name: "Micaela Puebla",
-        role: "Líder de Consultoría Auren",
-        photo: "/logos/Auren/team/micaela.jpg",
-      },
-      {
-        name: "Ayelén Capalbo",
-        role: "Consultora Senior Auren",
-        photo: "/logos/Auren/team/ayelen.jpg",
-      },
-    ],
-  },
+  team: AUREN_TEAM,
 
   // ═══════════════════════════════════════════════
   // IMPLEMENTACIÓN (Pasos generales)

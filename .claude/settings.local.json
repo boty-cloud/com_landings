@@ -21,7 +21,8 @@
       "Bash(npx tsx *)",
       "Bash(curl *)",
       "Bash(echo \"exit: $?\")",
-      "Bash(rtk npm *)"
+      "Bash(rtk npm *)",
+      "Bash(npx tsc *)"
     ]
   }
 }

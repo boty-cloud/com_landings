@@ -686,4 +686,189 @@ body {
   .header__logo--client {
     height: 34px;
   }
+
+  .about360__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team__grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+/* ─── JUSTIFIED BODY TEXT (Auren) ─── */
+[data-brand="auren"] .container--narrow p,
+[data-brand="auren"] .prose-justify {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+/* Keep list items and short subtitles readable, not justified */
+[data-brand="auren"] .section__subtitle,
+[data-brand="auren"] .container--narrow li {
+  text-align: inherit;
+}
+[data-brand="auren"] .container--narrow li {
+  text-align: left;
+}
+
+/* ─── ABOUT (Consultoría 360°) ─── */
+.about360__title {
+  text-align: center;
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.about360__subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+}
+
+.about360__lead {
+  max-width: 780px;
+  margin: 0 auto 2.5rem;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.about360__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.about360__card {
+  padding: 1.75rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-top: 3px solid var(--color-accent);
+}
+
+.about360__card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.about360__card-text {
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.about360__value {
+  padding: 2rem;
+  background: rgba(226, 35, 26, 0.1);
+  border-left: 4px solid var(--color-accent);
+}
+
+.about360__value-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+}
+
+.about360__value-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* ─── TEAM ─── */
+.team__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin: 3rem auto 0;
+  max-width: 1000px;
+}
+
+.team__card {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+}
+
+.team__avatar {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.team__avatar-initials {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.team__name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--color-text-dark);
+}
+
+.team__role {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+/* ─── PRICING DURATION ─── */
+.pricing__duration {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.95rem;
+  color: var(--color-accent);
+}
+
+/* ─── PRINT / SAVE-AS-PDF ─── */
+@media print {
+  *,
+  *::before,
+  *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .header,
+  .btn,
+  .btn--print,
+  .section--cta {
+    display: none !important;
+  }
+
+  .hero {
+    padding-top: 40px !important;
+  }
+
+  .section {
+    padding: 32px 0 !important;
+    break-inside: avoid;
+  }
+
+  .card,
+  .pricing__card,
+  .about360__card,
+  .team__card {
+    break-inside: avoid;
+  }
+
+  a[href]::after {
+    content: "";
+  }
 }

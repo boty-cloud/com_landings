@@ -67,11 +67,19 @@ export interface Proposal {
     title: string;
     paragraphs: string[];
     logo?: string;
+    // Optional "Consultoría 360°" pillars block
+    cardsTitle?: string;
+    cardsSubtitle?: string;
+    cardsSubtitleText?: string;
+    cards?: { title: string; text: string }[];
+    // Optional closing value-proposition block
+    valueProposition?: { title: string; text: string };
   };
 
   // 6. Equipo de trabajo (team members with photos)
   team?: {
     title: string;
+    subtitle?: string;
     members: {
       name: string;
       role: string;
@@ -132,8 +140,9 @@ export interface ModuleItem {
 
 export interface PricingPlan {
   name: string;
-  amount: string;
+  amount?: string; // Optional — Auren proposals show payment structure + duration, not a total
   amountSuffix?: string;
+  duration?: string; // e.g. "4 meses de trabajo" — shown instead of/alongside a total
   description: string;
   details: string[];
   addon?: string;

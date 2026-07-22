@@ -1,3 +1,5 @@
+import PrintButton from "./PrintButton";
+
 interface HeroProps {
   tag: string;
   titlePre: string;
@@ -17,7 +19,11 @@ export default function Hero({ tag, titlePre, titleHighlight, titlePost, subtitl
           {titlePre}<span className="gradient-text">{titleHighlight}</span>{titlePost}
         </h1>
         <p className="hero__sub" dangerouslySetInnerHTML={{ __html: subtitle }} />
-        <a href={ctaHref} className="btn">{ctaText}</a>
+        {ctaHref === "#print" ? (
+          <PrintButton label={ctaText} />
+        ) : (
+          <a href={ctaHref} className="btn">{ctaText}</a>
+        )}
       </div>
     </section>
   );
