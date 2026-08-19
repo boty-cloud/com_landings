@@ -19,7 +19,8 @@
     "seed:aj-servicios": "npx tsx scripts/seed-aj-servicios.ts",
     "seed:aj-servicios-auren": "npx tsx scripts/seed-aj-servicios-auren.ts",
     "seed:telefilms": "npx tsx scripts/seed-telefilms.ts",
-    "seed:telefilms-auren": "npx tsx scripts/seed-telefilms-auren.ts"
+    "seed:telefilms-auren": "npx tsx scripts/seed-telefilms-auren.ts",
+    "seed:reynoso-auren": "npx tsx scripts/seed-reynoso-auren.ts"
   },
   "dependencies": {
     "firebase": "^12.12.0",

@@ -22,7 +22,16 @@
       "Bash(curl *)",
       "Bash(echo \"exit: $?\")",
       "Bash(rtk npm *)",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(cd *)",
+      "Bash(GOOGLE_APPLICATION_CREDENTIALS=credentials.json npx tsx -e ' *)",
+      "Bash(GOOGLE_APPLICATION_CREDENTIALS=credentials.json npm run dev)",
+      "Bash(echo \"started pid $!\")",
+      "Read(//tmp/**)",
+      "Bash(kill 12761)",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(git add *)",
+      "Bash(git commit -m 'Add Reynoso logo; fix Auren dark section bg, style pricing, enlarge header logo *)"
     ]
   }
 }
