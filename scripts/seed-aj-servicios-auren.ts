@@ -152,7 +152,7 @@ const proposal: Proposal = {
           "Desarrollo e implementación completa del flujo automatizado de conversación y calificación de leads en LinkedIn.",
         details: [
           "U$D 11.600 al inicio del proyecto",
-          "3 cuotas mensuales de U$D 8.800",
+          "5 cuotas mensuales de U$D 5.280",
           "Incluye desarrollo, implementación y puesta en marcha",
         ],
         duration: "4 meses de trabajo",

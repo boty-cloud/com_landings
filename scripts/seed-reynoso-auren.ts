@@ -156,7 +156,7 @@ const proposal: Proposal = {
           "Desarrollo e implementación completa de la centralización omnicanal de leads, la asignación inteligente en Odoo y el cotizador automático.",
         details: [
           "30% al inicio del proyecto: U$D 10.500",
-          "3 cuotas mensuales de U$D 8.166",
+          "5 cuotas mensuales de U$D 4.900",
           "Incluye desarrollo, implementación y puesta en marcha",
         ],
         duration: "4 meses de trabajo",
