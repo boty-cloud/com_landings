@@ -1,11 +1,13 @@
 /**
  * Auren Proposal Seed — Telefilms
- * Gobierno y Explotación de Datos (Data Warehouse / Data Lake corporativo)
- * Based on: .claude/rules/Telefilms_data_lake.md + Auren template
+ * Gestión de información y documentos comerciales + Data Lake corporativo
+ * Based on: .claude/rules/telefilms_new.docx.md (revisión 2 fases)
+ *           merged with .claude/rules/Telefilms_data_lake.md (detalle original)
  */
 
 import admin from "firebase-admin";
 import { Proposal } from "../types/proposal";
+import { AUREN_ABOUT_US, AUREN_TEAM } from "./auren-shared";
 
 // Initialize Firebase Admin
 if (!admin.apps.length) {
@@ -36,13 +38,13 @@ const proposal: Proposal = {
   // ═══════════════════════════════════════════════
   hero: {
     tag: "Propuesta de Servicios · 2026",
-    titlePre: "Gobierno y Explotación de Datos para",
+    titlePre: "Gestión de información y documentos comerciales para ",
     titleHighlight: "Telefilms",
     titlePost: "",
     subtitle:
-      "Diseño e implementación de una capa corporativa de datos que consolide información de múltiples sistemas, compañías y países, mejorando su calidad y disponibilidad para la toma de decisiones, con un enfoque incremental orientado al valor.",
-    ctaText: "Conocé la propuesta",
-    ctaHref: "#intro",
+      "Automatización del flujo de información comercial con distribuidores y productores, reduciendo las cargas operativas manuales y sentando las bases de una capa corporativa de datos escalable para la toma de decisiones.",
+    ctaText: "Descargá la propuesta en PDF",
+    ctaHref: "#print",
   },
 
   // ═══════════════════════════════════════════════
@@ -51,10 +53,10 @@ const proposal: Proposal = {
   companyUnderstanding: {
     title: "Entendimiento de la Empresa",
     paragraphs: [
-      "<strong>Telefilms</strong> es un grupo con operaciones distribuidas entre <strong>múltiples compañías y países</strong>, cuya gestión de negocio requiere consolidar información comercial y operativa proveniente de diversas fuentes.",
-      "<strong>Ecosistema de información actual:</strong> la información relevante para la gestión se encuentra distribuida entre <strong>múltiples sistemas, compañías, países y planillas complementarias</strong>, lo que dificulta construir una visión integral de la operación.",
-      "<strong>Contexto de evolución:</strong> el grupo cuenta con un roadmap integral de evolución de sus sistemas de gestión, que definirá la arquitectura tecnológica futura. En paralelo, surge la necesidad prioritaria de generar beneficios tangibles en el corto plazo.",
-      "<strong>Oportunidad:</strong> una capa corporativa de datos permitiría centralizar información, mejorar su calidad y ponerla a disposición de los distintos niveles de decisión, sin esperar la implementación completa de la arquitectura objetivo.",
+      "El <strong>departamento comercial de Telefilms</strong> mantiene un flujo de información continuo entre <strong>productores de contenido</strong>, las <strong>áreas comerciales de Telefilms</strong> y los distintos <strong>distribuidores de contenido</strong>.",
+      "<strong>Proceso actual:</strong> hasta el momento ese flujo se realiza de forma manual, quedando en manos de los distintos responsables comerciales de cada canal la correcta recepción de la información por parte de los distribuidores.",
+      "<strong>Múltiples orígenes de información:</strong> parte de los datos se extraen directamente de reportes de los sistemas de los distribuidores y otros suelen ser archivos de Excel. Una vez recibida, la información se procesa de forma manual, adaptándola a los formatos necesarios y volcándola al sistema de gestión para su <strong>liquidación</strong>.",
+      "<strong>Impacto en la gestión:</strong> tener la información distribuida y procesarla manualmente dificulta contar con reportería e indicadores de gestión y performance útiles para la dirección y el área comercial, en la toma de decisiones de venta y distribución de contenido orientadas a maximizar los resultados.",
     ],
   },
 
@@ -64,16 +66,16 @@ const proposal: Proposal = {
   needUnderstanding: {
     title: "Entendimiento de la Necesidad",
     paragraphs: [
-      "A partir de las conversaciones mantenidas con el equipo de Telefilms y del análisis preliminar realizado, observamos que la organización enfrenta un <strong>desafío creciente para acceder a información consolidada, confiable y oportuna</strong> para la toma de decisiones.",
-      "Telefilms manifestó la necesidad de contar con una <strong>visión consolidada de la información comercial y operativa</strong>, integrando datos que hoy se encuentran atomizados entre distintas plataformas y procesos, de manera de facilitar el seguimiento del negocio, la trazabilidad de la información y la generación de reportes ejecutivos.",
-      "<strong>Puntos de dolor actuales:</strong>",
+      "A partir de las conversaciones mantenidas con el equipo de Telefilms y del análisis preliminar realizado, identificamos la necesidad de <strong>ordenar y automatizar la gestión de la información y los documentos comerciales</strong>, mejorando su calidad y disponibilidad para la toma de decisiones.",
+      "<strong>Resumen de la problemática actual:</strong>",
       "<ul>" +
-        "<li><strong>Información atomizada:</strong> datos distribuidos entre múltiples sistemas, compañías, países y planillas complementarias.</li>" +
-        "<li><strong>Falta de visión integral:</strong> dificultad para construir una mirada única de la operación del grupo.</li>" +
-        "<li><strong>Calidad y trazabilidad:</strong> necesidad de mejorar la confiabilidad de los datos y el seguimiento de su ciclo de vida.</li>" +
-        "<li><strong>Reporting ejecutivo:</strong> complejidad para generar reportes consolidados e intercompañía de forma oportuna.</li>" +
+        "<li><strong>Información distribuida</strong> en distintos sistemas.</li>" +
+        "<li><strong>Falta de orden</strong> en la recepción y en los formatos de la documentación.</li>" +
+        "<li><strong>Procesamiento manual</strong> de los reportes para la liquidación.</li>" +
+        "<li><strong>Conciliación</strong> de la información recibida por los distribuidores.</li>" +
+        "<li><strong>Falta de reportes e indicadores actualizados</strong>, relevantes para la toma de decisiones.</li>" +
       "</ul>",
-      "Se propone una <strong>iniciativa complementaria al roadmap tecnológico</strong>, orientada a diseñar e implementar las capacidades de Gobierno y Explotación de Datos del grupo, con un enfoque incremental que priorice dominios, compañías o áreas de negocio específicas y entregue resultados visibles desde las primeras etapas.",
+      "El <strong>principal objetivo</strong> de la solución propuesta es la <strong>automatización y la reducción de las cargas operativas manuales</strong>, construyendo al mismo tiempo los cimientos de datos necesarios para una gestión basada en información confiable y escalable.",
     ],
   },
 
@@ -83,130 +85,56 @@ const proposal: Proposal = {
   solution: {
     title: "Propuesta de Trabajo",
     subtitle:
-      "Objetivo: diseñar e implementar un modelo corporativo de gobierno y explotación de datos que consolide información de múltiples fuentes y siente las bases para la analítica avanzada y la IA.",
+      "En base a lo relevado en las reuniones con Telefilms, proponemos una solución de dos fases de implementación cuyo principal objetivo es la automatización y la reducción de las cargas operativas manuales.",
     description:
-      "La solución deberá garantizar <strong>escalabilidad</strong> para incorporar nuevas compañías, países y fuentes de información; una <strong>definición clara de roles y perfiles de acceso</strong>; <strong>gobierno y trazabilidad</strong> sobre el ciclo de vida de los datos; <strong>flexibilidad</strong> para evolucionar junto con la arquitectura tecnológica futura; <strong>disponibilidad de información consolidada</strong> para la toma de decisiones; y la <strong>capacidad futura de consulta mediante asistentes inteligentes y agentes de IA</strong>.",
+      "La primera fase pone foco en la <strong>explotación de la información</strong> —tableros y reportes de gestión para el área comercial— para generar valor visible en el corto plazo. La segunda fase construye la <strong>capa de datos</strong> que sostiene y escala esa explotación: la ingesta de datos y la estructura del Data Lake corporativo, preparada para incorporar nuevos procesos, compañías y áreas en el futuro.",
     methodology: {
       title: "Enfoque diferencial",
       description:
-        "A diferencia de proyectos tradicionales de datos que buscan abordar toda la organización simultáneamente, proponemos un <strong>enfoque iterativo y orientado al valor</strong>, priorizando aquellas áreas donde la disponibilidad de información puede generar beneficios concretos en menor plazo. El objetivo es que Telefilms comience a obtener resultados desde los primeros incrementos del proyecto, mientras construye una plataforma de datos robusta, escalable y alineada con la futura arquitectura tecnológica.",
+        "A diferencia de proyectos tradicionales de datos que buscan abordar toda la organización simultáneamente, proponemos un <strong>enfoque iterativo y orientado al valor</strong>, priorizando aquellas áreas donde la disponibilidad de información genera beneficios concretos en menor plazo. El objetivo es que Telefilms obtenga resultados desde los primeros incrementos del proyecto, mientras construye una plataforma de datos robusta, escalable y alineada con la futura arquitectura tecnológica del grupo.",
     },
     phases: [
       {
-        title: "Fase 1: Identificación de fuentes y validación del mapa de procesos",
+        title: "Fase 1: Tableros y reportes de gestión",
         description:
-          "Comprender cómo se genera, transforma y consume la información dentro de Telefilms, identificando las fuentes de datos prioritarias y los procesos que las originan. Incluye la revisión del mapa de procesos, el relevamiento de flujos de información, la identificación de usuarios consumidores e indicadores críticos, la evaluación inicial de calidad y disponibilidad, y la priorización de dominios para una implementación incremental.",
+          "Trabajar junto a Telefilms en el armado y diseño de los informes que se buscan obtener dentro del área comercial y en el flujo de información con distribuidores y productores. Identificamos la información relevante y los principales indicadores que se van a requerir consultar, relevando las fuentes y los flujos actuales para dejar disponibles reportes ejecutivos y operativos confiables.",
         deliverables: [
-          "Mapa de fuentes de información",
-          "Inventario de datos y sistemas",
-          "Mapa de flujos de información",
-          "Catálogo preliminar de indicadores",
-          "Matriz de priorización de dominios de datos",
-          "Roadmap de quick wins y casos de uso iniciales",
+          "Diseño de tableros y reportes de gestión para el área comercial",
+          "Catálogo de indicadores clave (KPIs) de negocio, ventas y distribución",
+          "Mapa de fuentes de información y flujos con distribuidores y productores",
+          "Inventario de datos y sistemas actuales",
+          "Matriz de priorización de dominios de datos y quick wins",
+          "Dashboards piloto validados con usuarios finales",
         ],
         duration: "Fase inicial",
       },
       {
-        title: "Fase 2: Diseño del Data Warehouse / Data Lake corporativo",
+        title: "Fase 2: Ingesta de datos — Data Lake corporativo",
         description:
-          "Definir la arquitectura funcional y de gobierno que soportará la consolidación y explotación de datos del grupo. Abarca el gobierno de datos (roles, Data Owners, Data Stewards, políticas de acceso y seguridad), el modelo de gestión de datos (incorporación de fuentes, controles de calidad, metadatos y datos maestros), la arquitectura de información (diseño conceptual, capas, criterios de integración y escalabilidad) y el modelo de explotación (reporting, analítica y segmentación por perfil).",
+          "Armado de la estructura del Data Lake de Telefilms junto con la definición del proceso de ingesta de los datos que lo alimentan. La información proviene de distintas fuentes y sistemas que requieren la definición de integraciones y de políticas de recepción de información y reportes. Se diseña la estructura base preparada para ser escalada a medida que se incorporan nuevos procesos, compañías, países y áreas a proyectos de automatización, incorporando el gobierno y la trazabilidad sobre el ciclo de vida de los datos.",
         deliverables: [
-          "Modelo de Gobierno de Datos",
-          "Arquitectura objetivo del Data Warehouse / Data Lake",
-          "Modelo conceptual de información",
-          "Matriz de roles y accesos",
-          "Catálogo de dominios de datos",
-          "Roadmap de implementación",
+          "Diseño de la estructura base del Data Lake corporativo (preparada para escalar)",
+          "Definición del proceso de ingesta e integraciones con los sistemas fuente",
+          "Políticas de recepción de información y reportes (formatos y estándares)",
+          "Modelo de Gobierno de Datos: roles y responsabilidades (Data Owners, Data Stewards, accesos)",
+          "Controles de calidad, gestión de metadatos y datos maestros",
+          "Matriz de roles y accesos, con trazabilidad sobre el ciclo de vida de la información",
+          "Catálogo de dominios de datos y roadmap de escalamiento (nuevas compañías y países)",
         ],
-        duration: "Fase de diseño",
-      },
-      {
-        title: "Fase 3: Prueba de Concepto (PoC)",
-        description:
-          "Validar técnicamente el modelo propuesto mediante la implementación de un caso de uso prioritario, definido en la Fase 1 (por ejemplo: información comercial consolidada, rentabilidad por película, seguimiento de derechos y explotación, liquidaciones, consolidación regional o indicadores ejecutivos). Incluye la construcción del modelo de datos, dashboards piloto, validación de calidad con usuarios finales y evaluación de capacidades de consulta mediante IA sobre la información consolidada.",
-        deliverables: [
-          "Ambiente piloto funcional",
-          "Dashboards iniciales",
-          "Modelo de datos validado",
-          "Informe de resultados y recomendaciones para escalamiento",
-        ],
-        duration: "Fase de validación",
-      },
-      {
-        title: "Fase 4: Implementación y adopción",
-        description:
-          "Desplegar progresivamente la solución corporativa de gobierno y explotación de datos: incorporación gradual de nuevas fuentes, desarrollo de tableros ejecutivos y operativos, implementación de los procesos de gobierno definidos, capacitación de usuarios, gestión de perfiles y permisos, incorporación progresiva de nuevas compañías y países, y evolución hacia capacidades avanzadas de analítica e inteligencia artificial.",
-        deliverables: [
-          "Repositorio centralizado de información corporativa",
-          "Dashboards gerenciales y operativos",
-          "Indicadores consolidados intercompañía",
-          "Gestión de accesos por perfil y gobierno de la información",
-          "Base preparada para asistentes inteligentes y agentes de IA",
-        ],
-        duration: "Fase de despliegue",
+        duration: "Fase de construcción",
       },
     ],
   },
 
   // ═══════════════════════════════════════════════
-  // 4. QUIÉNES SOMOS (fijo Auren)
+  // 4. QUIÉNES SOMOS (fijo Auren — bloque compartido)
   // ═══════════════════════════════════════════════
-  aboutUs: {
-    title: "¿Por qué elegir Auren?",
-    logo: "/logos/Auren/Auren.jpeg",
-    paragraphs: [
-      "Auren es una firma internacional de consultoría con presencia en más de 90 países y más de 30.000 profesionales especializados.",
-      "<strong>Enfoque boutique y cercano</strong>, con respaldo metodológico de estándares internacionales.",
-      "<strong>Visión integrada</strong> entre consultoría estratégica, BPO, tecnología y recursos humanos.",
-      "<strong>Compromiso con la Responsabilidad Social Corporativa</strong> alineado con los Objetivos de Desarrollo Sostenible (ODS) de la ONU.",
-      "Auren Latin America combina la excelencia global con el conocimiento profundo del mercado local, ofreciendo soluciones adaptadas a las necesidades específicas de cada cliente.",
-    ],
-  },
+  aboutUs: AUREN_ABOUT_US,
 
   // ═══════════════════════════════════════════════
-  // 5. PROPUESTA ECONÓMICA (placeholder — completar)
+  // 6. EQUIPO DE TRABAJO (bloque compartido)
   // ═══════════════════════════════════════════════
-  pricing: {
-    sectionTitle: "Propuesta Económica",
-    sectionSubtitle: "Inversión ajustada al alcance y valor generado.",
-    plans: [
-      {
-        name: "Gobierno y Explotación de Datos",
-        amount: "USD [MONTO]",
-        amountSuffix: "+ IVA",
-        description:
-          "Diseño e implementación del modelo corporativo de gobierno y explotación de datos, con enfoque incremental por fases.",
-        details: [
-          "Fase 1 · Identificación de fuentes y mapa de procesos",
-          "Fase 2 · Diseño del Data Warehouse / Data Lake",
-          "Fase 3 · Prueba de Concepto (PoC)",
-          "Fase 4 · Implementación y adopción",
-          "[Definir esquema de pago y condiciones]",
-        ],
-        isFeatured: true,
-        badge: "Propuesta",
-      },
-    ],
-  },
-
-  // ═══════════════════════════════════════════════
-  // 6. EQUIPO DE TRABAJO
-  // ═══════════════════════════════════════════════
-  team: {
-    title: "Equipo de Trabajo",
-    members: [
-      {
-        name: "Micaela Puebla",
-        role: "Líder de Consultoría Auren",
-        photo: "/logos/Auren/team/micaela.jpg",
-      },
-      {
-        name: "Ayelén Capalbo",
-        role: "Consultora Senior Auren",
-        photo: "/logos/Auren/team/ayelen.jpg",
-      },
-    ],
-  },
+  team: AUREN_TEAM,
 
   // ═══════════════════════════════════════════════
   // IMPLEMENTACIÓN (Pasos generales)
@@ -222,17 +150,17 @@ const proposal: Proposal = {
       {
         icon: "🔍",
         title: "Relevamiento",
-        text: "Identificación de fuentes de información y validación del mapa de procesos.",
+        text: "Identificación de fuentes, flujos con distribuidores y productores, e indicadores clave del área comercial.",
       },
       {
-        icon: "⚙️",
-        title: "Diseño y PoC",
-        text: "Diseño de la arquitectura de datos y validación con una prueba de concepto sobre un caso prioritario.",
+        icon: "📊",
+        title: "Tableros y reportes",
+        text: "Diseño e implementación de los tableros y reportes de gestión, validados con los usuarios finales.",
       },
       {
-        icon: "✅",
-        title: "Implementación y adopción",
-        text: "Despliegue incremental, capacitación de usuarios y evolución hacia analítica avanzada e IA.",
+        icon: "🏗️",
+        title: "Ingesta y Data Lake",
+        text: "Definición de integraciones y políticas de ingesta, y construcción de la estructura base del Data Lake corporativo.",
       },
     ],
   },
@@ -241,7 +169,7 @@ const proposal: Proposal = {
   // CTA & FOOTER
   // ═══════════════════════════════════════════════
   cta: {
-    title: "¿Listo para construir la capa de datos de Telefilms?",
+    title: "¿Listo para ordenar y automatizar la información comercial de Telefilms?",
     text: "Coordiná una reunión con nuestro equipo para comenzar por la Fase 1 y definir los próximos pasos.",
     buttonText: "Agendar reunión",
     buttonHref: "mailto:contacto@auren.com",
