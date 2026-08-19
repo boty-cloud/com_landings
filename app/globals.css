@@ -25,6 +25,11 @@
    Claim gray: Pantone 426 C @ 80%
    ═══════════════════════════════════════════════ */
 [data-brand="auren"] {
+  /* The brand wrapper is a <div> inside <body>; paint it so bare .section
+     blocks (Pricing, NeedUnderstanding) don't reveal the dark <body>. */
+  background: #ffffff;
+  color: #262729;
+  min-height: 100vh;
   --color-bg: #ffffff;
   --color-surface: #f8f8f8;
   --color-surface-light: #ffffff;
@@ -97,13 +102,13 @@ body {
 }
 
 .header__logo {
-  height: 40px;
+  height: 44px;
   width: auto;
   object-fit: contain;
 }
 
 .header__logo--client {
-  height: 44px;
+  height: 56px;
   width: auto;
   border-radius: 8px;
 }
@@ -619,6 +624,85 @@ body {
   box-shadow: 0 2px 24px rgba(38, 39, 41, 0.08);
 }
 
+/* ─── PRICING (Auren) — elegant payment schedule ─── */
+[data-brand="auren"] #inversion {
+  background: var(--color-surface); /* soft gray band to lift the card */
+}
+
+[data-brand="auren"] .pricing {
+  max-width: 560px;
+}
+
+[data-brand="auren"] .pricing__card {
+  background: #ffffff;
+  padding: 48px 44px 40px;
+  border: 1px solid var(--color-border);
+  border-top: 4px solid var(--color-accent);
+  box-shadow: 0 8px 40px rgba(38, 39, 41, 0.1);
+}
+
+[data-brand="auren"] .pricing__badge {
+  background: var(--color-accent);
+  border-radius: 0;
+  letter-spacing: 1.5px;
+}
+
+[data-brand="auren"] .pricing__plan {
+  color: var(--color-text);
+  font-size: 1.35rem;
+  font-weight: 700;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+[data-brand="auren"] .pricing__desc {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 28px;
+}
+
+/* Turn the payment lines into clean schedule rows */
+[data-brand="auren"] .pricing__details {
+  margin-bottom: 0;
+}
+
+[data-brand="auren"] .pricing__details li {
+  color: var(--color-text);
+  font-size: 1rem;
+  padding: 14px 0 14px 30px;
+  border-bottom: 1px dashed var(--color-border);
+}
+
+[data-brand="auren"] .pricing__details li:last-child {
+  border-bottom: none;
+}
+
+[data-brand="auren"] .pricing__details li::before {
+  content: '\2713';
+  top: 14px;
+  color: var(--color-accent);
+}
+
+[data-brand="auren"] .pricing__duration {
+  margin-top: 24px;
+  padding: 14px 18px;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+[data-brand="auren"] .pricing__addon {
+  margin-top: 24px;
+  padding: 18px 20px;
+  border: 1px dashed var(--color-accent);
+  border-top: 1px dashed var(--color-accent);
+  background: rgba(226, 35, 26, 0.04);
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
+
 /* Flex grid so trailing card(s) on the last row stay centered */
 [data-brand="auren"] .modules {
   display: flex;
@@ -680,11 +764,11 @@ body {
   }
 
   .header__logo {
-    height: 30px;
+    height: 34px;
   }
 
   .header__logo--client {
-    height: 34px;
+    height: 44px;
   }
 
   .about360__grid {
